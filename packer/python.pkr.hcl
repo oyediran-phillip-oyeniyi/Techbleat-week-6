@@ -44,8 +44,8 @@ source "amazon-ebs" "python" {
 
 source "amazon-ebs" "java" {
     region = "eu-west-1"
-    instance_type = "t3.micro"
-    ssh_username = "c7i-flex.large"
+    instance_type = "c7i-flex.large"
+    ssh_username = "ec2-user"
     source_ami  = "ami-09c54d172e7aa3d9a"
     ami_name = "java-packer"
     ami_virtualization_type  = "hvm"
