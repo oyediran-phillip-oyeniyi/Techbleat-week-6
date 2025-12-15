@@ -13,23 +13,11 @@ provider "aws" {
   region = "eu-west-1"
 }
 
-data "aws_subnet" "public" {
-  filter {
-    name   = "tag:Tier"
-    values = ["public"]
-  }
-  
-  filter {
-    name   = "availability-zone"
-    values = ["eu-west-1a"]
-  }
-}
-
 
 resource "aws_instance" "nginx-node" {
   ami                    = "ami-0dc69fef38832b690"
   instance_type          = "c7i-flex.large"
-  subnet_id              = data.aws_subnet.public.id
+  subnet_id              = "subnet-05879e6898e207a2b"
   vpc_security_group_ids = ["sg-00fc85f260a51a4dd"]
   key_name               = "aws-key"
 
