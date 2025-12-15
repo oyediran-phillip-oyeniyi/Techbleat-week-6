@@ -31,7 +31,7 @@ resource "aws_instance" "nginx-node" {
 resource "aws_instance" "python-node" {
   ami                    = "ami-07b5321568e2b46bf"
   instance_type          = "c7i-flex.large"
-  subnet_id              = data.aws_subnet.public.id
+  subnet_id              = "subnet-05879e6898e207a2b"
   vpc_security_group_ids = ["sg-00fc85f260a51a4dd"]
   key_name               = "aws-key"
 
@@ -45,7 +45,7 @@ resource "aws_instance" "python-node" {
 resource "aws_instance" "java-node" {
   ami                    = "ami-07327aae308bf3bde"
   instance_type          = "c7i-flex.large"
-  subnet_id              = data.aws_subnet.public.id
+  subnet_id              = "subnet-05879e6898e207a2b"
   vpc_security_group_ids = ["sg-00fc85f260a51a4dd"]
   key_name               = "aws-key"
 
