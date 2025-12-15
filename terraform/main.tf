@@ -1,8 +1,4 @@
 terraform {
-  backend "local"{
-    path = "/tmp/terraform.tfstate"
-  }
-  
   required_version = ">= 1.6.0"
 
   required_providers {
